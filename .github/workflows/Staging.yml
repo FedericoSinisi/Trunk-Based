@@ -1,0 +1,15 @@
+name: Deploy to Staging
+
+on:
+  release:
+    types: [prereleased]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Staging (Usando Tags-RC)
+        run: echo "Deploy to Staging"
