@@ -15,7 +15,7 @@ jobs:
     needs: PRE-COMMIT
     secrets: inherit
 
-  CD-Development:
+  CD:
     needs: CI
     uses: ./.github/workflows/CD.yml
     with:
@@ -23,5 +23,5 @@ jobs:
 
   Notificacion:
     uses: ./.github/workflows/notification.yml
-    needs: CD-Development
+    needs: CD
     secrets: inherit
