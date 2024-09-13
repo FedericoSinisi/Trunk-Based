@@ -2,6 +2,11 @@ name: CD
 
 on:
   workflow_call:
+    inputs:
+      ENVIRONMENT:
+          description: "set the variables secrets"
+          required: false
+          type: string
 
 jobs:
   CD:
