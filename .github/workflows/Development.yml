@@ -12,5 +12,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to Dev (Usando Tags-RC)
+      - name: Deploy to Dev (Con push a main)
         run: echo "Deploy to Dev"
