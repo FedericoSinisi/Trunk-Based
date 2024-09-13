@@ -14,11 +14,11 @@ jobs:
     needs: PRE-COMMIT
     secrets: inherit
 
-  CD-Development:
+  CD-staging:
     needs: CI
     uses: ./.github/workflows/CD.yml
     with:
-      ENVIRONMENT: development
+      ENVIRONMENT: staging
 
   Notificacion:
     uses: ./.github/workflows/notification.yml

@@ -14,11 +14,11 @@ jobs:
     needs: PRE-COMMIT
     secrets: inherit
 
-  CD-Development:
+  CD-prod:
     needs: CI
     uses: ./.github/workflows/CD.yml
     with:
-      ENVIRONMENT: development
+      ENVIRONMENT: prod
 
   Notificacion:
     uses: ./.github/workflows/notification.yml

@@ -13,4 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: CD
-        run: echo "Ejecutando CD"
+        run: |
+          echo "Ejecutando CD"
+          echo "Environment: ${{ inputs.ENVIRONMENT }}"
