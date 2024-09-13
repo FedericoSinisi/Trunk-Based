@@ -6,11 +6,22 @@ on:
       - main
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 
-      - name: Deploy to Dev (Con push a main)
-        run: echo "Deploy to Dev"
+  PRE-COMMIT:
+    uses: ./.github/workflows/pre-commit.yml
+
+  CI:
+    uses: ./.github/workflows/CI.yml
+    needs: PRE-COMMIT
+    secrets: inherit
+
+  CD-Development:
+    needs: CI
+    uses: ./.github/workflows/CD.yml
+    with:
+      ENVIRONMENT: development
+
+  Notificacion:
+    uses: ./.github/workflows/notification.yml
+    needs: CD-Development
+    secrets: inherit

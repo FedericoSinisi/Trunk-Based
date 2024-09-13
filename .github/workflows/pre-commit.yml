@@ -1,0 +1,11 @@
+name: pre-commit
+
+on:
+  workflow_call:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pre-commit
+        run: echo "Ejecutando pre-commit"

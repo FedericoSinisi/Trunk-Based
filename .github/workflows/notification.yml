@@ -1,0 +1,11 @@
+name: Notificacion
+
+on:
+  workflow_call:
+
+jobs:
+  Notificacion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notificacion
+        run: echo "Ejecutando Notificacion"

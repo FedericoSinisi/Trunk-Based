@@ -1,0 +1,11 @@
+name: CD
+
+on:
+  workflow_call:
+
+jobs:
+  CD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CD
+        run: echo "Ejecutando CD"
